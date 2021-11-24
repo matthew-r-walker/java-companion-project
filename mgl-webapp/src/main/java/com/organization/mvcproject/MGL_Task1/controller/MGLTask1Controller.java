@@ -16,15 +16,15 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.organization.mvcproject.MGL_Task1.model.Game;
 import com.organization.mvcproject.MGL_Task1.model.Review;
-import com.organization.mvcproject.MGL_Task1.service.Game_Service;
+import com.organization.mvcproject.MGL_Task1.service.GameService;
 
 //TODONE 1.0  follow java class naming, improve class name
 @Controller
 public class MGLTask1Controller {
 
-	//TODO 1.0 variable naming convention, improve reference name
+	//TODONE 1.0 variable naming convention, improve reference name
 	@Autowired
-	private Game_Service javaGameService;
+	private GameService javaGameService;
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home() {
