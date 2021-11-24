@@ -33,7 +33,7 @@ import com.organization.mvcproject.config.MvcConfiguration;
 @ContextConfiguration(classes = MvcConfiguration.class)
 @WebAppConfiguration
 @TestInstance(Lifecycle.PER_CLASS)
-class Game_Service_ImplTest {
+class GameServiceImplTest {
 	
 	
 	@Autowired
