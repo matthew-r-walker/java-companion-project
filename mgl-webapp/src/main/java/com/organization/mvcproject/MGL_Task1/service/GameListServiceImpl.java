@@ -10,7 +10,7 @@ import com.organization.mvcproject.MGL_Task1.model.Game;
 //TODONE 1.0  follow java class naming, improve class name
 //TODONE 1.0  "javaGameService" service reference name is not necessary, remove it.
 @Service
-public class GameServiceImpl implements GameService {
+public class GameListServiceImpl implements IGameListService {
 
 	/**
 	 * TODO 2.0 The class that interacts with persistent data is called a Data Access Object(DAO)
@@ -74,7 +74,7 @@ public class GameServiceImpl implements GameService {
 	}
 
 	public static void setGameId(Long gameId) {
-		GameServiceImpl.gameId = gameId;
+		GameListServiceImpl.gameId = gameId;
 	}
 
 	public static Long getCompanyId() {
@@ -82,7 +82,7 @@ public class GameServiceImpl implements GameService {
 	}
 
 	public static void setCompanyId(Long companyId) {
-		GameServiceImpl.companyId = companyId;
+		GameListServiceImpl.companyId = companyId;
 	}
 
 	public static List<Game> getGames() {
@@ -90,7 +90,7 @@ public class GameServiceImpl implements GameService {
 	}
 
 	public static void setGames(ArrayList<Game> games) {
-		GameServiceImpl.games = games;
+		GameListServiceImpl.games = games;
 	}
 
 }
