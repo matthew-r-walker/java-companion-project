@@ -3,10 +3,10 @@ package com.organization.mvcproject.MGL_Task1.model;
 public class Review {
 	
 	/**
-	 * TODO 1.0 java object member variable naming convention, 
+	 * TODONE 1.0 java object member variable naming convention, 
 	 * one member declared here is not object oriented refactor it
 	 */
-	private String reviewBody;
+	private String body;
 	private String author;
 	private Integer rating;
 
@@ -27,10 +27,10 @@ public class Review {
 	}
 
 	public String getReviewBody() {
-		return reviewBody;
+		return body;
 	}
 
 	public void setReviewBody(String reviewBody) {
-		this.reviewBody = reviewBody;
+		this.body = reviewBody;
 	}
 }
