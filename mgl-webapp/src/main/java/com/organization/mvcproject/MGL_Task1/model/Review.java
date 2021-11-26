@@ -26,11 +26,11 @@ public class Review {
 		this.rating = rating;
 	}
 
-	public String getReviewBody() {
+	public String getBody() {
 		return body;
 	}
 
-	public void setReviewBody(String reviewBody) {
-		this.body = reviewBody;
+	public void setBody(String body) {
+		this.body = body;
 	}
 }
