@@ -20,7 +20,6 @@ public class GameListServiceImpl implements IGameListService {
 	 */
 	
 	private static Long gameId = new Long(0);
-	private static Long companyId = new Long(0);
 	private static List<Game> games = new ArrayList<Game>();
 
 	static {
@@ -64,33 +63,11 @@ public class GameListServiceImpl implements IGameListService {
 	}
 
 	/**
-	 * TODO 1.0 the static methods below are either not related to a Game Service,
+	 * TODONE 1.0 the static methods below are either not related to a Game Service,
      * are confused with methods found in the model, or duplicates. 
      * Remove them.
 	 * 
 	 */
-	public static Long getGameId() {
-		return gameId;
-	}
-
-	public static void setGameId(Long gameId) {
-		GameListServiceImpl.gameId = gameId;
-	}
-
-	public static Long getCompanyId() {
-		return companyId;
-	}
-
-	public static void setCompanyId(Long companyId) {
-		GameListServiceImpl.companyId = companyId;
-	}
-
-	public static List<Game> getGames() {
-		return games;
-	}
-
-	public static void setGames(ArrayList<Game> games) {
-		GameListServiceImpl.games = games;
-	}
+	
 
 }
