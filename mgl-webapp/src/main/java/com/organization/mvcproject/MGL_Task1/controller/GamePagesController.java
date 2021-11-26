@@ -20,7 +20,7 @@ import com.organization.mvcproject.MGL_Task1.service.IGameListService;
 
 //TODONE 1.0  follow java class naming, improve class name
 @Controller
-public class MGLTask1Controller {
+public class GamePagesController {
 
 	//TODONE 1.0 variable naming convention, improve reference name
 	@Autowired
