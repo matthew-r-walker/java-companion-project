@@ -5,7 +5,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.organization.mvcproject.MGL_Task1.model.Game;
+import com.organization.mvcproject.model.Game;
 
 //TODONE 1.0  follow java class naming, improve class name
 //TODONE 1.0  "javaGameService" service reference name is not necessary, remove it.

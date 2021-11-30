@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.organization.mvcproject.MGL_Task1.model.Game;
+import com.organization.mvcproject.model.Game;
 
 @Controller
 public class HomeController {

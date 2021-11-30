@@ -14,9 +14,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.organization.mvcproject.MGL_Task1.model.Game;
-
 import com.organization.mvcproject.MGL_Task1.service.IGameListService;
+import com.organization.mvcproject.model.Game;
 
 @RestController
 @RequestMapping(value="/game")
