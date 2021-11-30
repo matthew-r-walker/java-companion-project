@@ -27,6 +27,7 @@ import org.springframework.test.context.web.WebAppConfiguration;
 
 import com.organization.mvcproject.config.MvcConfiguration;
 import com.organization.mvcproject.model.Game;
+import com.organization.mvcproject.service.IGameListService;
 
 @RunWith(JUnitPlatform.class)
 @ExtendWith(SpringExtension.class)

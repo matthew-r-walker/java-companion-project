@@ -1,4 +1,4 @@
-package com.organization.mvcproject.MGL_Task1.service;
+package com.organization.mvcproject.service;
 
 import java.util.ArrayList;
 import java.util.List;
