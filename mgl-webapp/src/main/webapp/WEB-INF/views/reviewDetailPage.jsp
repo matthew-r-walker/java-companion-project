@@ -16,6 +16,9 @@
             	background-size: cover;
             }
         </style>
+        <link rel="apple-touch-icon" sizes="180x180" href="/android-chrome-192x192.png">
+    	<link rel="icon" type="image/png" sizes="32x32" href="resources/static/images/favicon-32x32.png">
+    	<link rel="icon" type="image/png" sizes="16x16" href="resources/static/images/favicon-16x16.png">
     </head>
 
     <body>
@@ -24,9 +27,9 @@
         <h2 class="text-light">Submitted Review Information</h2>
         <table class="table table-dark text-light">
             <tr>
-                <td>ReviewBody</td>
+                <td>body</td>
                 <td>
-                    <p>${submittedReview.reviewBody}</p>
+                    <p>${submittedReview.body}</p>
                 </td>
             </tr>
             <tr>
