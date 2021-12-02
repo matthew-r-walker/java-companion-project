@@ -1,19 +1,16 @@
-package com.organization.mvcproject.service;
+package com.organization.mvcproject.dao;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.stereotype.Service;
-
+import org.springframework.stereotype.Repository;
 import com.organization.mvcproject.model.Game;
 
-//TODONE 1.0  follow java class naming, improve class name
-//TODONE 1.0  "javaGameService" service reference name is not necessary, remove it.
-@Service
-public class GameListServiceImpl implements IGameListService {
+@Repository
+public class GameDao implements IGameDao {
 
 	/**
-	 * TODO 2.0 The class that interacts with persistent data is called a Data Access Object(DAO)
+	 * TODONE 2.0 The class that interacts with persistent data is called a Data Access Object(DAO)
 	 *  or a Repository class. The private static list is mocking our persistence of games.
 	 *   
 	 *  Move this list, and methods operating on this list to an appropriately named package and class.
@@ -50,24 +47,47 @@ public class GameListServiceImpl implements IGameListService {
 		return games;
 	}
 
-	@Override
-	public List<Game> retrieveAllGames() {
-		return games;
+
+	public List<Game> findAllGames() {
+		List<Game> gamesCopy = new ArrayList<>(games);
+		return gamesCopy;
 	}
 
-	@Override
+
 	public Game saveGame(Game game) {
+		if (game.getId() != null) {
+			if (findGameById(game.getId()) != null) {
+				for (int i = 0; i < games.size(); i++) {
+					if (game.getId().equals(games.get(i).getId())) {
+						return games.set(i, game);
+					}
+				}
+			}
+		}
 		game.setId(++gameId);
 		games.add(game);
 		return game;
 	}
+	
+	public Game findGameById(long gameId) {
+		for (Game game : games) {
+			if (gameId == (long) game.getId()) {
+				return game;
+			}
+		}
+		return null;
+	}
+	
+	public boolean deleteGameById(long gameId) {
+		Game gameToRemove = findGameById(gameId);
+		if (gameToRemove != null) {
+			games.remove(gameToRemove);
+			return true;
+		}
+		return false;
+	}
 
-	/**
-	 * TODONE 1.0 the static methods below are either not related to a Game Service,
-     * are confused with methods found in the model, or duplicates. 
-     * Remove them.
-	 * 
-	 */
+	
 	
 
 }

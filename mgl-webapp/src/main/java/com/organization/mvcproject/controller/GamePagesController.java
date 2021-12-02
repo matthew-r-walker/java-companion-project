@@ -14,15 +14,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.organization.mvcproject.dao.IGameDao;
 import com.organization.mvcproject.model.Game;
-import com.organization.mvcproject.service.IGameListService;
 
 @RestController
 @RequestMapping(value="/game")
 public class GamePagesController {
 
 	@Autowired
-	private IGameListService gameService;
+	private IGameDao gameService;
 	
 //	@RequestMapping(value = "/games", method = RequestMethod.GET)
 //	public ModelAndView game() {
@@ -36,7 +36,7 @@ public class GamePagesController {
 	
 	@RequestMapping(value = "/all", method = RequestMethod.GET)
 	public ResponseEntity<List<Game>> fetchAllGames() {
-		return new ResponseEntity<List<Game>>(gameService.retrieveAllGames(), HttpStatus.OK);
+		return new ResponseEntity<List<Game>>(gameService.findAllGames(), HttpStatus.OK);
 	}
 
 	@RequestMapping(value = "/create", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)

@@ -26,8 +26,8 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.context.web.WebAppConfiguration;
 
 import com.organization.mvcproject.config.MvcConfiguration;
+import com.organization.mvcproject.dao.IGameDao;
 import com.organization.mvcproject.model.Game;
-import com.organization.mvcproject.service.IGameListService;
 
 @RunWith(JUnitPlatform.class)
 @ExtendWith(SpringExtension.class)
@@ -38,7 +38,7 @@ class GameListServiceImplTest {
 	
 	
 	@Autowired
-	private IGameListService gameServiceUnderTest;
+	private IGameDao gameServiceUnderTest;
 	
 	private static Game testGame = createGame(1);
 	
@@ -84,7 +84,7 @@ class GameListServiceImplTest {
 	
 	@Test
   	void retrieveAllGamesServiceReturnsGames() {
-		List<Game> games = gameServiceUnderTest.retrieveAllGames(); 
+		List<Game> games = gameServiceUnderTest.findAllGames(); 
 		assertNotNull(games);
 		assertTrue(games.size() >= 2 );
 	}
