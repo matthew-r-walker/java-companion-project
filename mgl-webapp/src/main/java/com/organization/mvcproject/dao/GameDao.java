@@ -47,13 +47,13 @@ public class GameDao implements IGameDao {
 		return games;
 	}
 
-
+	@Override
 	public List<Game> findAllGames() {
 		List<Game> gamesCopy = new ArrayList<>(games);
 		return gamesCopy;
 	}
 
-
+	@Override
 	public Game saveGame(Game game) {
 		if (game.getId() != null) {
 			if (findGameById(game.getId()) != null) {
@@ -69,6 +69,7 @@ public class GameDao implements IGameDao {
 		return game;
 	}
 	
+	@Override
 	public Game findGameById(long gameId) {
 		for (Game game : games) {
 			if (gameId == (long) game.getId()) {
@@ -78,6 +79,7 @@ public class GameDao implements IGameDao {
 		return null;
 	}
 	
+	@Override
 	public boolean deleteGameById(long gameId) {
 		Game gameToRemove = findGameById(gameId);
 		if (gameToRemove != null) {
