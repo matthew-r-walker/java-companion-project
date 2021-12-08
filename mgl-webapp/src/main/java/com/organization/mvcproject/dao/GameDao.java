@@ -88,6 +88,11 @@ public class GameDao implements IGameDao {
 		}
 		return false;
 	}
+	
+	@Override
+	public List<Game> findGamesByGenre(String genre) {
+		return null;
+	}
 
 	
 	

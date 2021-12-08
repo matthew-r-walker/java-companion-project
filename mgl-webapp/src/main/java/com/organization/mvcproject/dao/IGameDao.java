@@ -15,4 +15,6 @@ public interface IGameDao {
 	
 	Game findGameById(long gameId);
 	
+	List<Game> findGamesByGenre(String genre);
+	
 }
