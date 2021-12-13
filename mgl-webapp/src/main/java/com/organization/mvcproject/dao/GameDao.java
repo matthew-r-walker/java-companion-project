@@ -91,7 +91,13 @@ public class GameDao implements IGameDao {
 	
 	@Override
 	public List<Game> findGamesByGenre(String genre) {
-		return null;
+		List<Game> gamesByGenre = new ArrayList<>();
+		for (int i = 0; i < games.size(); i++) {
+			if (genre.equals(games.get(i).getGenre())) {
+				gamesByGenre.add(games.get(i));		
+			}
+		}
+		return gamesByGenre;
 	}
 
 	
