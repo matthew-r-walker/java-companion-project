@@ -72,6 +72,14 @@
             <div class="panel panel-default">
                 <!-- Default panel contents -->
                 <div class="panel-heading text-light"><span class="lead">List of all current games</span></div>
+	                <span data-ng-if="ctrl.genres.length > 1"><span class="lead"> | </span>
+	                	<label style="color: white" class="lead" for="select_genre_filter">Filter by Genre</label>
+	               		<select id="select_genre_filter"
+		                	 		 data-ng-options="genre.name as genre.name for genre in ctrl.genres" 
+		                	 		 data-ng-model="ctrl.selectedGenre" 
+		                	 		 data-ng-change="ctrl.fetchAllGames()">
+	                	</select>
+	               	</span>
                 <div class="tablecontainer">
                     <table class="table table-dark table-striped text-light">
                         <thead>
