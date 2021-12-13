@@ -58,5 +58,9 @@ public class GamePagesController {
 		return new ResponseEntity<Void>(HttpStatus.OK);
 	}
 	
+	@RequestMapping(value = "/", method = RequestMethod.GET)
+	public ResponseEntity<List<Game>> fetchGamesByGenre(String genre) {
+		return new ResponseEntity<List<Game>>(gameService.findGamesByGenre(genre), HttpStatus.OK);
+	}
 	
 }
