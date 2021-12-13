@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('MGL_Task1_app').controller('MGL_Task1_Controller',
-		[ 'MGL_Task1_Service', function(MGL_Task1_Service) {
+angular.module('MglApp').controller('GameController',
+		[ 'GameService', function(GameService) {
 			var self = this;
 			self.game = {
 				id : '',
@@ -16,7 +16,7 @@ angular.module('MGL_Task1_app').controller('MGL_Task1_Controller',
 
 			self.fetchAllGames = function(){
 				if(self.selectedGenre == 'All'){
-					MGL_Task1_Service.fetchAllGames().then(function(data) {
+					GameService.fetchAllGames().then(function(data) {
 						self.games = data;
 						if(self.games.length > 0){
 							self.genres = parseGenres();	
@@ -25,7 +25,7 @@ angular.module('MGL_Task1_app').controller('MGL_Task1_Controller',
 						}
 					})
 				} else {
-					MGL_Task1_Service.filterByGenre(self.selectedGenre).then( function(data) {
+					GameService.filterByGenre(self.selectedGenre).then( function(data) {
 						self.games = data;
 					});
 				}
@@ -47,14 +47,14 @@ angular.module('MGL_Task1_app').controller('MGL_Task1_Controller',
 			}
 
 			self.addGame = function(){
-				return MGL_Task1_Service.createGame(self.game).then( function() {
+				return GameService.createGame(self.game).then( function() {
 					self.fetchAllGames();
 					self.game = {};
 				});
 			}
 			
 			self.deleteGame = function(gameToDelete){
-				return MGL_Task1_Service.deleteGame(gameToDelete.id).then( function() {
+				return GameService.deleteGame(gameToDelete.id).then( function() {
 					self.fetchAllGames();
 				});
 			}
@@ -68,7 +68,7 @@ angular.module('MGL_Task1_app').controller('MGL_Task1_Controller',
 			}
 			
 			self.updateGame = function() {
-				return MGL_Task1_Service.updateGame(self.game).then( function() {
+				return GameService.updateGame(self.game).then( function() {
 					self.fetchAllGames();
 					self.game = {};
 				});

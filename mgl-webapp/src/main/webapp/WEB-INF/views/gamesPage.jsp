@@ -26,10 +26,10 @@
     	<link rel="icon" type="image/png" sizes="16x16" href="resources/static/images/favicon-16x16.png">
     </head>
 
-    <body ng-app="MGL_Task1_app" class="ng-cloak">
+    <body ng-app="MglApp" class="ng-cloak">
         <mgl:myNav/>
         <br>
-        <div class="container" ng-controller="MGL_Task1_Controller as ctrl">
+        <div class="container" ng-controller="GameController as ctrl">
             <div class="panel panel-default">
                 <div class="panel-heading text-light"><span class="lead">Game Registration Form </span></div>
                 <div class="formcontainer">
